@@ -3,7 +3,7 @@ require('dotenv').config();
 
 
 const forecast = (longitude,latitude,callback) => {
-	url = 'http://api.weatherstack.com/current?access_key='+ process.env.WeatherStackAPIKEY + '=' + latitude + ',' + longitude;
+	url = 'http://api.weatherstack.com/current?access_key='+ process.env.WSAPIKEY + '&query=' + latitude + ',' + longitude;
 	request({url,json:true},(err,{body:res} = {}) => {
 		if(err){
 			callback('Could not connect to internet',undefined);
