@@ -1,3 +1,5 @@
+import {marker,map} from "./map";
+
 console.log('Client side javascript file is loaded.');
 
 const addressForm = document.querySelector(".addressForm");
@@ -9,7 +11,8 @@ const messageTwo = document.querySelector("#msg-2");
 addressForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const address = search.value;
-
+	
+	
 	messageOne.textContent = 'Loading...';
 	messageTwo.textContent = '';
 	
@@ -24,6 +27,12 @@ addressForm.addEventListener('submit', (e) => {
 		{
 			return messageOne.textContent = data.error;
 		}
+		// Map settings
+		const longitude = data.longitude;
+		const latitude = data.latitude;
+		map.easeTo({center: [longitude, latitude], duration: 4000});
+		marker.setLngLat([longitude,latitude]);
+		
 		messageOne.textContent = data.location;
 		messageTwo.textContent = data.forecast;
 	})
@@ -32,3 +41,4 @@ addressForm.addEventListener('submit', (e) => {
 	});
 
 })
+
