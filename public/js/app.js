@@ -30,7 +30,7 @@ addressForm.addEventListener('submit', (e) => {
 		// Map settings
 		const longitude = data.longitude;
 		const latitude = data.latitude;
-		map.easeTo({center: [longitude, latitude], duration: 4000});
+		map.easeTo({center: [longitude, latitude], zoom:9, duration: 4000});
 		marker.setLngLat([longitude,latitude]);
 		
 		messageOne.textContent = data.location;

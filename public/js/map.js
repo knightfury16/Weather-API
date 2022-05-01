@@ -4,10 +4,10 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia25pZ2h0ZnVyeTE2IiwiYSI6ImNreGNzdWY1djB3N2cyb
 export const map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
-center: [-79.4512, 43.6568],
-zoom: 9
+center: [90.411827, 23.760196],
+zoom: 7
 });
 
 export const marker = new mapboxgl.Marker({color:'red'})
-.setLngLat([-79.4512, 43.6568])
+.setLngLat([90.411827, 23.760196])
 .addTo(map);
