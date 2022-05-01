@@ -8,17 +8,22 @@
 
 	<div class="main-content">
 		<h1>This is where you get your weather information.</h1>
-		<form class="addressForm">
-			<input type="text" placeholder="Location">
-			<button>Search</button>
-		</form>
+		<div id="content">
+			<form class="addressForm">
+				<input type="text" placeholder="Location">
+				<button>Search</button>
+			</form>
+	
+			<p class="msg" id="msg-1"></p>
+			<p class="msg" id="msg-2"></p>
 
-		<p class="msg" id="msg-1"></p>
-		<p class="msg" id="msg-2"></p>
+		</div>
+
+		<div id="map"></div>
+		
 	</div>
-
-	<div id="map"  style="height: 60vh;"></div>
 	<%- include ('./partials/footer') %> 
+	
 	<script src="/dist/bundle.js"></script>
 </body>
 </html>
