@@ -43,8 +43,9 @@ app.get('/weather', (req,res) => {
 			error:"You must specify a address"
 		});
 	}
+	const crood = req.query.crood === 'false'? false : true;
 	// *Wire up geocode and forecast function
-	geocode(req.query.address, (err, {longitude,latitude,location}={}) => {
+	geocode(req.query.address, crood, (err, {longitude,latitude,location}={}) => {
 		if (err){ 
 			return res.send({
 				error: err

@@ -1,4 +1,5 @@
 import {marker,map} from "./map";
+import {SendMyPos} from "./currentPos";
 
 console.log('Client side javascript file is loaded.');
 
@@ -8,6 +9,8 @@ const messageOne = document.querySelector("#msg-1");
 const messageTwo = document.querySelector("#msg-2");
 
 
+new SendMyPos();
+
 addressForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const address = search.value;
@@ -16,7 +19,7 @@ addressForm.addEventListener('submit', (e) => {
 	messageOne.textContent = 'Loading...';
 	messageTwo.textContent = '';
 	
-	const url = '/weather?address=' + address;
+	const url = '/weather?address=' + address + "&crood=false";
 
 	fetch(url)
 	.then((response) => {
